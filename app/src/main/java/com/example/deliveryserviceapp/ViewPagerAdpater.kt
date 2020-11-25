@@ -27,7 +27,6 @@ class ViewPagerAdpater(private val context: Context) : PagerAdapter() {
     }
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-
         layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val v = layoutInflater!!.inflate(R.layout.viewpager_activity, null)
         val image = v.findViewById<View>(R.id.imageview) as ImageView
