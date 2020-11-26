@@ -14,7 +14,6 @@ import com.example.deliveryserviceapp.databinding.GridviewItemBinding
 class GridViewAdapter (val context: Context, val img_list: Array<Int>, val text_list:Array<String>) : BaseAdapter() {
     private lateinit var binding: GridviewItemBinding
 
-
     @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.gridview_item, parent, false)

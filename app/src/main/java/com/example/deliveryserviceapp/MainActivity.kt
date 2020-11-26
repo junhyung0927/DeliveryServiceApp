@@ -1,15 +1,20 @@
 package com.example.deliveryserviceapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.GridView
 import androidx.viewpager.widget.ViewPager
+import com.example.deliveryserviceapp.databinding.ActivityMainBinding
+import com.example.deliveryserviceapp.databinding.ViewpagerActivityBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
-    internal lateinit var viewpager : ViewPager
     internal lateinit var gridview: GridView
+
+    private val binding by binding<ActivityMainBinding>(R.layout.activity_main)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -43,11 +48,14 @@ class MainActivity : AppCompatActivity() {
         )
 
         val gridViewAdapter = GridViewAdapter(this, img, text)
-        gridview = findViewById(R.id.gridview) as GridView
-        gridview.adapter = gridViewAdapter
 
-        viewpager = findViewById(R.id.viewpager) as ViewPager
+        binding.gridview.adapter = gridViewAdapter
+
+        binding.gridview.setOnItemClickListener { adapterView, view, i, l ->
+            startActivity(Intent(this, LectureActivity::class.java))
+        }
+
         val adapter = ViewPagerAdpater(this)
-        viewpager.adapter = adapter
+        binding.viewpager.adapter = adapter
     }
 }
