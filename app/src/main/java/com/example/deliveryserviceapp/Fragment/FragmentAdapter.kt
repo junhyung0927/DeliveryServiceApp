@@ -19,6 +19,7 @@ class FragmentAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
             1 -> {
                 SecondFragment()
             }
+
             else -> {
                 ThirdFragment()
             }
