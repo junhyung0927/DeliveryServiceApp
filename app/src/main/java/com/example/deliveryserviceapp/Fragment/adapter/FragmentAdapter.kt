@@ -1,9 +1,11 @@
-package com.example.deliveryserviceapp.Fragment
+package com.example.deliveryserviceapp.Fragment.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import androidx.fragment.app.FragmentStatePagerAdapter
+import com.example.deliveryserviceapp.Fragment.FirstFragment
+import com.example.deliveryserviceapp.Fragment.SecondFragment
+import com.example.deliveryserviceapp.Fragment.ThirdFragment
 
 class FragmentAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     override fun getCount(): Int {

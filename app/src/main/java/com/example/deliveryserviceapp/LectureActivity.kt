@@ -1,19 +1,12 @@
 package com.example.deliveryserviceapp
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TableLayout
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBinderMapper
 import androidx.databinding.DataBindingUtil
-import androidx.viewbinding.ViewBinding
-import com.example.deliveryserviceapp.Fragment.FragmentAdapter
+import com.example.deliveryserviceapp.Fragment.adapter.FragmentAdapter
 import com.example.deliveryserviceapp.databinding.ActivityLectureBinding
 import com.example.deliveryserviceapp.databinding.CustomTabBinding
-import com.google.android.material.shape.CutCornerTreatment
 import com.google.android.material.tabs.TabLayout
 
 class LectureActivity : BaseActivity() {
@@ -25,6 +18,7 @@ class LectureActivity : BaseActivity() {
         setContentView(R.layout.activity_lecture)
 
         val fragmentAdapter = FragmentAdapter(supportFragmentManager)
+
         binding.listViewpager.adapter = fragmentAdapter
 
         binding.tabLayout.addTab(binding.tabLayout.newTab().setCustomView(createTabView("AI")))
